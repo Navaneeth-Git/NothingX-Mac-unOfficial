@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Bluetooth permissions for iOS -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>NothingX needs Bluetooth access to connect to and control your Nothing earbuds.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>NothingX needs Bluetooth access to connect to and control your Nothing earbuds.</string>
+	<key>NSBluetoothUsageDescription</key>
+	<string>NothingX needs Bluetooth access to connect to and control your Nothing earbuds.</string>
+	
+	<!-- Required macOS privacy permissions -->
+	<key>NSBluetoothServicesUsageDescription</key>
+	<string>NothingX needs Bluetooth access to connect to and control your Nothing earbuds.</string>
+	
+	<!-- Bundle information -->
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	
+	<!-- Privacy permissions -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryBluetooth</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>1FF7.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist> 

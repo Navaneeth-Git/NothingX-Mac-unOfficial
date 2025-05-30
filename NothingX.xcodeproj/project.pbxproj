@@ -32,22 +32,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1F4C50E22DEA5E50006E50EF /* NothingX */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = NothingX;
 			sourceTree = "<group>";
 		};
 		1F4C50F12DEA5E52006E50EF /* NothingXTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = NothingXTests;
 			sourceTree = "<group>";
 		};
 		1F4C50FB2DEA5E52006E50EF /* NothingXUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = NothingXUITests;
 			sourceTree = "<group>";
 		};

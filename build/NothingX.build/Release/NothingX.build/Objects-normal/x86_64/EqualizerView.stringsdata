@@ -1,0 +1,104 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/Views/EqualizerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Equalizer Presets",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select a preset or customize your own equalizer settings.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "Custom Equalizer",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset to Flat",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "%llddB",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "Advanced EQ provides more precise audio tuning with higher quality processing.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "Advanced Settings",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Advanced EQ",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bass Enhancement",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Adjust the bass level to enhance low frequencies.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Low",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "High",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 177
+        }
+      }
+    ]
+  },
+  "version": 1
+}

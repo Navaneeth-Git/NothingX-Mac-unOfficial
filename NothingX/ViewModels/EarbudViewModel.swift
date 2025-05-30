@@ -1,4 +1,5 @@
 import Foundation
+
 import CoreBluetooth
 import Combine
 import SwiftUI
@@ -246,29 +247,6 @@ class EarbudViewModel: ObservableObject {
 
 // MARK: - Additional Types
 
-enum EarbudSide {
-    case left
-    case right
-}
 
-enum GestureType: String, CaseIterable, Identifiable {
-    case singleTap = "Single Tap"
-    case doubleTap = "Double Tap"
-    case tripleTap = "Triple Tap"
-    case holdTap = "Hold"
-    
-    var id: String { self.rawValue }
-}
 
-enum FitTestStatus {
-    case notStarted
-    case inProgress
-    case completed
-}
 
-enum ConnectionState {
-    case disconnected
-    case connecting
-    case connected
-    case disconnecting
-} 

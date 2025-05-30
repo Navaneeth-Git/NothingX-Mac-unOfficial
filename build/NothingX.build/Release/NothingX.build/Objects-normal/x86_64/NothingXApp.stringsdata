@@ -1,0 +1,32 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/NothingXApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Bluetooth Required",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "NothingX needs Bluetooth to connect to your earbuds. Please enable Bluetooth in Settings.",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open Settings",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 78
+        }
+      }
+    ]
+  },
+  "version": 1
+}

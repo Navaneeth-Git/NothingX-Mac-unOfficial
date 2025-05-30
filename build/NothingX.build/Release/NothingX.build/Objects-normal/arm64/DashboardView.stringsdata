@@ -1,0 +1,144 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/Views/DashboardView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Device Information",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "Firmware: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Type: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Battery Status",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quick Controls",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "In-ear Detection",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 133
+        }
+      },
+      {
+        "comment": "",
+        "key": "Low Latency Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 139
+        }
+      },
+      {
+        "comment": "",
+        "key": "Personalized ANC",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Noise Control",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "Off",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Transparency",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "ANC",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find My Earbuds",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 161
+        }
+      },
+      {
+        "comment": "",
+        "key": "Play a sound from your earbuds to help locate them",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 167
+        }
+      },
+      {
+        "comment": "",
+        "key": "Play Sound",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 173
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 213
+        }
+      }
+    ]
+  },
+  "version": 1
+}

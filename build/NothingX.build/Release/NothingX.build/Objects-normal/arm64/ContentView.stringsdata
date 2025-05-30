@@ -1,0 +1,336 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Firmware: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "Disconnect",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 104
+        }
+      },
+      {
+        "comment": "",
+        "key": "Connected",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find My Earbuds",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fit Test Result: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 230
+        }
+      },
+      {
+        "comment": "",
+        "key": "Noise Control Mode",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Personalized ANC",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 216
+        }
+      },
+      {
+        "comment": "",
+        "key": "Run Ear Tip Fit Test",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 223
+        }
+      },
+      {
+        "comment": "",
+        "key": "Equalizer Preset",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 249
+        }
+      },
+      {
+        "comment": "",
+        "key": "Advanced EQ",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 283
+        }
+      },
+      {
+        "comment": "",
+        "key": "Apply Custom EQ",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 275
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bass",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 262
+        }
+      },
+      {
+        "comment": "",
+        "key": "Treble",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 265
+        }
+      },
+      {
+        "comment": "",
+        "key": "Configure Gestures",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 338
+        }
+      },
+      {
+        "comment": "",
+        "key": "Left Earbud",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 304
+        }
+      },
+      {
+        "comment": "",
+        "key": ":",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 311
+        }
+      },
+      {
+        "comment": "",
+        "key": "Right Earbud",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 321
+        }
+      },
+      {
+        "comment": "",
+        "key": ":",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 328
+        }
+      },
+      {
+        "comment": "",
+        "key": "Device Model: %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 369
+        }
+      },
+      {
+        "comment": "",
+        "key": "Firmware: %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 373
+        }
+      },
+      {
+        "comment": "",
+        "key": "In-Ear Detection",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 357
+        }
+      },
+      {
+        "comment": "",
+        "key": "Low Latency Mode",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 363
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 406
+        }
+      },
+      {
+        "comment": "",
+        "key": "Earbud",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 477
+        }
+      },
+      {
+        "comment": "",
+        "key": "Configure Gesture Controls",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 465
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 470
+        }
+      },
+      {
+        "comment": "",
+        "key": "Left Earbud",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 478
+        }
+      },
+      {
+        "comment": "",
+        "key": "Right Earbud",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 479
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 493
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset to Default",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 514
+        }
+      },
+      {
+        "comment": "",
+        "key": "Apply Changes",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 522
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 581
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 590
+        }
+      },
+      {
+        "comment": "",
+        "key": "Connect your Nothing Earbuds",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 609
+        }
+      },
+      {
+        "comment": "",
+        "key": "Control your earbuds, adjust settings, and customize your experience",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 613
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bluetooth is turned off",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 620
+        }
+      },
+      {
+        "comment": "",
+        "key": "NothingX v1.0",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 653
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open Bluetooth Settings",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 624
+        }
+      },
+      {
+        "comment": "",
+        "key": "Scan for Devices",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 632
+        }
+      },
+      {
+        "comment": "",
+        "key": "Please make sure your Info.plist contains all required Bluetooth permission keys.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 691
+        }
+      },
+      {
+        "comment": "",
+        "key": "View Documentation",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 696
+        }
+      }
+    ]
+  },
+  "version": 1
+}

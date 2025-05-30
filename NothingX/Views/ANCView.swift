@@ -69,21 +69,27 @@ struct ANCView: View {
                                             get: {
                                                 switch viewModel.ancMode {
                                                 case .high: return 3
-                                                case .mid: return 2
-                                                case .low: return 1
+                                                case .medium: return 2
+                                                case .light: return 1
+                                                case .off: return 0
+                                                case .adaptive: return 4
+                                                case .transparency: return 5
                                                 default: return 0
                                                 }
                                             },
                                             set: { value in
                                                 switch Int(value.rounded()) {
+                                                case 0: viewModel.setANCMode(.off)
+                                                case 1: viewModel.setANCMode(.light)
+                                                case 2: viewModel.setANCMode(.medium)
                                                 case 3: viewModel.setANCMode(.high)
-                                                case 2: viewModel.setANCMode(.mid)
-                                                case 1: viewModel.setANCMode(.low)
+                                                case 4: viewModel.setANCMode(.adaptive)
+                                                case 5: viewModel.setANCMode(.transparency)
                                                 default: viewModel.setANCMode(.off)
                                                 }
                                             }
                                         ),
-                                        in: 1...3,
+                                        in: 0...5,
                                         step: 1
                                     )
                                     
@@ -215,11 +221,11 @@ struct ANCView: View {
     private var fitTestResultText: String {
         switch viewModel.fitTestResult {
         case .good:
-            return "Good Seal"
-        case .fair:
-            return "Fair Seal"
+            return "Good fit detected"
+        case .adjustNeeded:
+            return "Adjust your earbuds"
         case .poor:
-            return "Poor Seal"
+            return "Poor fit detected"
         case .unsupported:
             return "Unsupported"
         }
@@ -228,11 +234,11 @@ struct ANCView: View {
     private var fitTestResultDescription: String {
         switch viewModel.fitTestResult {
         case .good:
-            return "Your ear tips are providing a good seal. This gives you optimal sound quality and noise cancellation."
-        case .fair:
-            return "Your ear tips are providing an adequate seal. You may want to try adjusting them for better performance."
+            return "Your earbuds have a good seal"
+        case .adjustNeeded:
+            return "Try adjusting your earbuds for a better seal"
         case .poor:
-            return "Your ear tips are not sealing well. Try adjusting their position or using a different size."
+            return "The seal is poor. Try a different ear tip size"
         case .unsupported:
             return "Fit test is not supported on this device."
         }
@@ -242,8 +248,8 @@ struct ANCView: View {
         switch viewModel.fitTestResult {
         case .good:
             return "checkmark.circle.fill"
-        case .fair:
-            return "exclamationmark.circle.fill"
+        case .adjustNeeded:
+            return "exclamationmark.triangle.fill"
         case .poor:
             return "xmark.circle.fill"
         case .unsupported:
@@ -255,7 +261,7 @@ struct ANCView: View {
         switch viewModel.fitTestResult {
         case .good:
             return .green
-        case .fair:
+        case .adjustNeeded:
             return .yellow
         case .poor:
             return .red

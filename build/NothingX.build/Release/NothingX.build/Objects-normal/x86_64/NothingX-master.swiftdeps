@@ -1,0 +1,19 @@
+version: "Apple Swift version 6.1 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)"
+options: "8a4518427abaad84416e5cb49cfc7f99f1b13f443aa290a37a576b2246cf4be9"
+build_start_time: [1748644204, 673998000]
+build_end_time: [1748644215, 580652000]
+inputs:
+  "/Users/navaneeth/Documents/NothingX/NothingX/ContentView.swift": [1748644192, 4493701]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothDevice.swift": [1748643947, 57901635]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothManager.swift": [1748643947, 52354543]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothTypes.swift": [1748644082, 166244707]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/EarbudManager.swift": [1748643947, 63635811]
+  "/Users/navaneeth/Documents/NothingX/NothingX/NothingXApp.swift": [1748642872, 901407398]
+  "/Users/navaneeth/Documents/NothingX/NothingX/ViewModels/EarbudViewModel.swift": [1748644069, 429161195]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/ANCView.swift": [1748644168, 903868281]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/DashboardView.swift": [1748642046, 743665737]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/DeviceScannerView.swift": [1748643947, 76602873]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/EqualizerView.swift": [1748642078, 31217483]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/GesturesView.swift": [1748642147, 75838494]
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/SettingsView.swift": [1748642171, 540787316]
+  "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/DerivedSources/GeneratedAssetSymbols.swift": [1748644204, 522285536]

@@ -1,0 +1,160 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/Views/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "App Settings",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start at Login",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show in Menu Bar",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "App Theme",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "System",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Light",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dark",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "Check for Updates",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Check Now",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 79
+        }
+      },
+      {
+        "comment": "",
+        "key": "Connection Settings",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 95
+        }
+      },
+      {
+        "comment": "",
+        "key": "Auto-connect to Last Device",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset All Connections",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "About",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "NothingX",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "Version 1.0.0",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "A native macOS app for controlling Nothing earbuds",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Based on the ear-web project",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Visit ear-web project",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 145
+        }
+      }
+    ]
+  },
+  "version": 1
+}

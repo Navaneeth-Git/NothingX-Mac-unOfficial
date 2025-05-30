@@ -1,0 +1,152 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/Views/ANCView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "This device does not support Active Noise Cancellation.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "Noise Control",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select your preferred noise control mode.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "ANC Level",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Low",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "High",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 96
+        }
+      },
+      {
+        "comment": "",
+        "key": "Current: %@",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "Personalized ANC",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Personalized ANC adapts to your ear shape and environment for optimal noise cancellation.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enable Personalized ANC",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ear Tip Fit Test",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "Test how well your ear tips fit and seal for optimal sound quality and ANC performance.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 172
+        }
+      },
+      {
+        "comment": "",
+        "key": "Run Ear Tip Fit Test",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fit Test Result",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 183
+        }
+      },
+      {
+        "comment": "",
+        "key": "Run Test Again",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 198
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ear Tip Fit Test",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 323
+        }
+      },
+      {
+        "comment": "",
+        "key": "Testing... %lld%%",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 335
+        }
+      },
+      {
+        "comment": "",
+        "key": "Please keep your earbuds in your ears and stay in a quiet environment.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 344
+        }
+      }
+    ]
+  },
+  "version": 1
+}

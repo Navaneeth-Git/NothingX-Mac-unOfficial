@@ -1,0 +1,80 @@
+{
+  "" : {
+    "const-values" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master.swiftconstvalues",
+    "dependencies" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master.d",
+    "diagnostics" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master.dia",
+    "emit-module-dependencies" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master-emit-module.dia",
+    "swift-dependencies" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingX-master.swiftdeps"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/ContentView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ContentView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothDevice.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothDevice.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothDevice.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothDevice.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothManager.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothManager.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothManager.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothManager.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/BluetoothTypes.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothTypes.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothTypes.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/BluetoothTypes.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Models/EarbudManager.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudManager.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudManager.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudManager.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/NothingXApp.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingXApp.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingXApp.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/NothingXApp.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/ViewModels/EarbudViewModel.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudViewModel.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudViewModel.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EarbudViewModel.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/ANCView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ANCView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ANCView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/ANCView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/DashboardView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DashboardView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DashboardView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DashboardView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/DeviceScannerView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DeviceScannerView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DeviceScannerView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/DeviceScannerView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/EqualizerView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EqualizerView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EqualizerView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/EqualizerView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/GesturesView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GesturesView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GesturesView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GesturesView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/NothingX/Views/SettingsView.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/SettingsView.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/SettingsView.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/SettingsView.o"
+  },
+  "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/navaneeth/Documents/NothingX/build/NothingX.build/Release/NothingX.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  }
+}

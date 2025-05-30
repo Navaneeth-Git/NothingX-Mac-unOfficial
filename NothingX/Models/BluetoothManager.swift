@@ -1,4 +1,5 @@
 import Foundation
+
 import CoreBluetooth
 
 class BluetoothManager: NSObject, ObservableObject {
@@ -20,26 +21,24 @@ class BluetoothManager: NSObject, ObservableObject {
     private var discoveredServices = [CBUUID: CBService]()
     private var discoveredCharacteristics = [CBUUID: CBCharacteristic]()
     
-    // Nothing earbuds UUIDs (add more specific UUIDs once you have them)
-    private let nothingServiceUUIDs = [
-        CBUUID(string: "0000180F-0000-1000-8000-00805F9B34FB"), // Battery Service
-        CBUUID(string: "0000180A-0000-1000-8000-00805F9B34FB"), // Device Information
-        CBUUID(string: "00001805-0000-1000-8000-00805F9B34FB"), // Current Time
-        // Add more specific Nothing earbud service UUIDs here
-    ]
+    // Nothing earbuds UUIDs - based on ear-web repository
+    private let nothingPrimaryServiceUUID = CBUUID(string: "955A1523-0FE4-F52F-A091-331D71AFD99D")
+    private let nothingBatteryServiceUUID = CBUUID(string: "180F")
+    private let nothingDeviceInfoServiceUUID = CBUUID(string: "180A")
     
-    // Characteristics UUIDs
-    private let batteryCharacteristicUUID = CBUUID(string: "00002A19-0000-1000-8000-00805F9B34FB")
-    private let modelNumberCharacteristicUUID = CBUUID(string: "00002A24-0000-1000-8000-00805F9B34FB")
-    private let firmwareRevisionCharacteristicUUID = CBUUID(string: "00002A26-0000-1000-8000-00805F9B34FB")
-    
-    // Nothing-specific characteristics (add real UUIDs when available)
-    private let equalizerCharacteristicUUID = CBUUID(string: "00000001-0000-1000-8000-00805F9B34FB") // Placeholder
-    private let ancModeCharacteristicUUID = CBUUID(string: "00000002-0000-1000-8000-00805F9B34FB")   // Placeholder
-    private let inEarDetectionCharacteristicUUID = CBUUID(string: "00000003-0000-1000-8000-00805F9B34FB") // Placeholder
-    private let lowLatencyModeCharacteristicUUID = CBUUID(string: "00000004-0000-1000-8000-00805F9B34FB") // Placeholder
-    private let gestureControlCharacteristicUUID = CBUUID(string: "00000005-0000-1000-8000-00805F9B34FB") // Placeholder
-    private let findMyEarbudsCharacteristicUUID = CBUUID(string: "00000006-0000-1000-8000-00805F9B34FB") // Placeholder
+    // Nothing characteristic UUIDs
+    private let batteryLeftCharUUID = CBUUID(string: "2B91C562-8909-4B1E-93D0-8A39D7862D0F")
+    private let batteryRightCharUUID = CBUUID(string: "2B91C562-8909-4B1E-93D0-8A39D7862D0E")
+    private let batteryCaseCharUUID = CBUUID(string: "2B91C562-8909-4B1E-93D0-8A39D7862D0D")
+    private let anc1CharUUID = CBUUID(string: "45F66627-4C7D-4321-9784-C5E7DAB34E8F")
+    private let anc2CharUUID = CBUUID(string: "45F66627-4C7D-4321-9784-C5E7DAB34E8E")
+    private let equalizerCharUUID = CBUUID(string: "91780BBF-F13E-43F8-B688-3D8AD3865A98")
+    private let inEarDetectionCharUUID = CBUUID(string: "EB927D67-741C-4197-B30E-13A70B943AD7")
+    private let lowLatencyModeCharUUID = CBUUID(string: "5DCF8DA3-50B3-4C76-93D4-DA2E4E88ACF1")
+    private let gestureControlCharUUID = CBUUID(string: "83CF0A7C-5794-4437-88D2-839F8DB383DD")
+    private let findMyEarbudsCharUUID = CBUUID(string: "46164F5C-BD5F-49B3-80F3-27DFEC2EFD60")
+    private let firmwareRevisionCharUUID = CBUUID(string: "2A26")
+    private let modelNumberCharUUID = CBUUID(string: "2A24")
     
     // Supported device models
     private let supportedDevices = [
@@ -121,7 +120,13 @@ class BluetoothManager: NSObject, ObservableObject {
                 }
                 
                 self.peripherals = []
-                self.centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
+                print("Starting scan for Nothing earbuds...")
+                
+                // Scan for all devices, since different Nothing/CMF models might advertise differently
+                let options: [String: Any] = [
+                    CBCentralManagerScanOptionAllowDuplicatesKey: false
+                ]
+                self.centralManager.scanForPeripherals(withServices: nil, options: options)
                 
                 // Auto-stop scan after 30 seconds
                 DispatchQueue.global().asyncAfter(deadline: .now() + 30) { [weak self] in
@@ -191,7 +196,8 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Set ANC mode
     func setANCMode(_ mode: ANCMode) {
-        guard let characteristic = discoveredCharacteristics[ancModeCharacteristicUUID] else {
+        guard let characteristic1 = discoveredCharacteristics[anc1CharUUID],
+              let characteristic2 = discoveredCharacteristics[anc2CharUUID] else {
             reportError("ANC control characteristic not found")
             return
         }
@@ -212,13 +218,15 @@ class BluetoothManager: NSObject, ObservableObject {
             modeValue = 5
         }
         
+        // ANC requires sending to two characteristics
         let data = Data([modeValue])
-        writeCharacteristic(characteristic, data: data, description: "Set ANC mode to \(mode)")
+        writeCharacteristic(characteristic1, data: data, description: "Set ANC mode to \(mode) - primary")
+        writeCharacteristic(characteristic2, data: data, description: "Set ANC mode to \(mode) - secondary")
     }
     
     // Set equalizer preset
     func setEqualizerPreset(_ preset: EqualizerPreset) {
-        guard let characteristic = discoveredCharacteristics[equalizerCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[equalizerCharUUID] else {
             reportError("Equalizer characteristic not found")
             return
         }
@@ -243,7 +251,7 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Set custom equalizer values
     func setCustomEqualizerValues(_ values: [Float]) {
-        guard let characteristic = discoveredCharacteristics[equalizerCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[equalizerCharUUID] else {
             reportError("Equalizer characteristic not found")
             return
         }
@@ -264,7 +272,7 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Toggle in-ear detection
     func toggleInEarDetection(_ enabled: Bool) {
-        guard let characteristic = discoveredCharacteristics[inEarDetectionCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[inEarDetectionCharUUID] else {
             reportError("In-ear detection characteristic not found")
             return
         }
@@ -276,7 +284,7 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Toggle low latency mode
     func toggleLowLatencyMode(_ enabled: Bool) {
-        guard let characteristic = discoveredCharacteristics[lowLatencyModeCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[lowLatencyModeCharUUID] else {
             reportError("Low latency mode characteristic not found")
             return
         }
@@ -288,7 +296,7 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Set gesture control
     func setGestureControl(earbud: EarbudSide, gestureType: GestureType, action: GestureAction) {
-        guard let characteristic = discoveredCharacteristics[gestureControlCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[gestureControlCharUUID] else {
             reportError("Gesture control characteristic not found")
             return
         }
@@ -341,7 +349,7 @@ class BluetoothManager: NSObject, ObservableObject {
     
     // Find my earbuds
     func findMyEarbuds() {
-        guard let characteristic = discoveredCharacteristics[findMyEarbudsCharacteristicUUID] else {
+        guard let characteristic = discoveredCharacteristics[findMyEarbudsCharUUID] else {
             reportError("Find my earbuds characteristic not found")
             return
         }
@@ -400,12 +408,83 @@ class BluetoothManager: NSObject, ObservableObject {
     // Helper method to check if a device is a Nothing earbud
     private func isNothingEarbud(_ name: String?) -> Bool {
         guard let name = name else { return false }
-        return supportedDevices.contains { name.contains($0) }
+        
+        // Debug info
+        print("Checking if \(name) is a Nothing earbud")
+        for device in supportedDevices {
+            print("Comparing with supported device: \(device)")
+            if name.contains(device) {
+                print("✅ Match found: \(name) contains \(device)")
+                return true
+            }
+        }
+        
+        // Fallback: check for generic "CMF" or "Nothing" keywords
+        if name.contains("CMF") || name.contains("Nothing") {
+            print("✅ Generic match found for \(name)")
+            return true
+        }
+        
+        print("❌ No match found for \(name)")
+        return false
     }
     
     // Discover all required services
     private func discoverEarbudServices(_ peripheral: CBPeripheral) {
-        peripheral.discoverServices(nothingServiceUUIDs)
+        print("Discovering services for Nothing earbuds...")
+        // Instead of looking for specific services, discover all services first
+        peripheral.discoverServices(nil)
+    }
+    
+    // Read battery levels
+    private func readBatteryLevels() {
+        guard let peripheral = connectedPeripheral else {
+            reportError("Not connected to a device")
+            return
+        }
+        
+        // Try the specific UUIDs first
+        let batteryCharacteristics = [batteryLeftCharUUID, batteryRightCharUUID, batteryCaseCharUUID]
+        for uuid in batteryCharacteristics {
+            if let characteristic = discoveredCharacteristics[uuid] {
+                print("Reading battery from specific characteristic: \(uuid)")
+                peripheral.readValue(for: characteristic)
+            }
+        }
+        
+        // If we didn't find the specific UUIDs, look for any battery-related characteristics
+        let batteryKeywords = ["battery", "batt", "level"]
+        for (uuid, characteristic) in discoveredCharacteristics {
+            let uuidString = uuid.uuidString.lowercased()
+            
+            // Skip if we already read from the specific UUIDs
+            if batteryCharacteristics.contains(uuid) {
+                continue
+            }
+            
+            // Look for generic battery characteristics or standard battery service characteristics
+            if batteryKeywords.contains(where: { uuidString.contains($0) }) || 
+               uuidString == "2a19" {  // Standard battery level characteristic
+                print("Reading from potential battery characteristic: \(uuid)")
+                peripheral.readValue(for: characteristic)
+            }
+        }
+    }
+    
+    // Update battery levels on the UI
+    private func updateBatteryLevels(left: Int? = nil, right: Int? = nil, case: Int? = nil) {
+        let currentLevels = batteryLevels
+        let newLevels = (
+            left ?? currentLevels.left,
+            right ?? currentLevels.right,
+            `case` ?? currentLevels.case
+        )
+        
+        if newLevels != currentLevels {
+            DispatchQueue.main.async { [weak self] in
+                self?.batteryLevels = newLevels
+            }
+        }
     }
 }
 
@@ -484,6 +563,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
         print("Discovered device: \(name ?? "Unnamed"), RSSI: \(RSSI)")
         
         if isNothingEarbud(name), !peripherals.contains(where: { $0.identifier == peripheral.identifier }) {
+            print("Found Nothing earbud: \(name ?? "Unknown")")
             peripherals.append(peripheral)
             let device = BluetoothDevice(id: peripheral.identifier, name: name ?? "Unknown Nothing Device", rssi: RSSI.intValue)
             
@@ -499,12 +579,21 @@ extension BluetoothManager: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected to \(peripheral.name ?? "Unknown device")")
         
-        // Set peripheral delegate on the same queue
+        // Set peripheral delegate and update connected peripheral
         peripheral.delegate = self
         connectedPeripheral = peripheral
         
-        // Start discovering services
-        discoverEarbudServices(peripheral)
+        // Apply a connection option that might help maintain the connection
+        // This increases the time between automatic disconnections
+        peripheral.setDesiredConnectionLatency(.low, for: peripheral)
+        
+        // Wait a moment before discovering services to ensure the connection is stable
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            
+            // Start discovering services
+            self.discoverEarbudServices(peripheral)
+        }
         
         // Update the connected device property on the main thread
         DispatchQueue.main.async { [weak self] in
@@ -525,6 +614,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
             self.connectedDevice = nil
             self.discoveredServices.removeAll()
             self.discoveredCharacteristics.removeAll()
+            self.batteryLevels = (0, 0, 0)
         }
     }
     
@@ -553,9 +643,12 @@ extension BluetoothManager: CBPeripheralDelegate {
         
         print("Discovered \(services.count) services for \(peripheral.name ?? "Unknown device")")
         
-        // Store services and discover characteristics
+        // Debug: Print all discovered services
         for service in services {
+            print("Service found: \(service.uuid)")
             discoveredServices[service.uuid] = service
+            
+            // Discover all characteristics for each service
             print("Discovering characteristics for service: \(service.uuid)")
             peripheral.discoverCharacteristics(nil, for: service)
         }
@@ -574,28 +667,29 @@ extension BluetoothManager: CBPeripheralDelegate {
         
         print("Discovered \(characteristics.count) characteristics for service \(service.uuid)")
         
+        // Debug: Print all discovered characteristics
         for characteristic in characteristics {
-            print("Found characteristic: \(characteristic.uuid)")
+            print("Found characteristic: \(characteristic.uuid) in service: \(service.uuid)")
             discoveredCharacteristics[characteristic.uuid] = characteristic
             
             // Read initial values for readable characteristics
             if characteristic.properties.contains(.read) {
+                print("Reading value for characteristic: \(characteristic.uuid)")
                 peripheral.readValue(for: characteristic)
             }
             
             // Subscribe to notifications if supported
             if characteristic.properties.contains(.notify) {
+                print("Subscribing to notifications for: \(characteristic.uuid)")
                 peripheral.setNotifyValue(true, for: characteristic)
             }
-            
-            // Handle specific characteristics
-            if characteristic.uuid == batteryCharacteristicUUID {
-                print("Found battery level characteristic")
-            } else if characteristic.uuid == modelNumberCharacteristicUUID {
-                print("Found model number characteristic")
-            } else if characteristic.uuid == firmwareRevisionCharacteristicUUID {
-                print("Found firmware revision characteristic")
-            }
+        }
+        
+        // After discovering all characteristics, try to read battery levels
+        // Attempt to read battery even if we didn't find the exact UUIDs
+        if service.uuid.uuidString.lowercased().contains("battery") || 
+           service.uuid.uuidString == "180F" {
+            readBatteryLevels()
         }
     }
     
@@ -610,42 +704,82 @@ extension BluetoothManager: CBPeripheralDelegate {
             return
         }
         
-        if characteristic.uuid == batteryCharacteristicUUID {
-            handleBatteryLevelUpdate(data)
-        } else if characteristic.uuid == modelNumberCharacteristicUUID {
-            handleModelNumberUpdate(data)
-        } else if characteristic.uuid == firmwareRevisionCharacteristicUUID {
-            handleFirmwareRevisionUpdate(data)
-        } else {
-            print("Received data for characteristic \(characteristic.uuid): \(data.hexDescription)")
+        print("Received data for characteristic \(characteristic.uuid): \(data.hexDescription)")
+        
+        // Known battery characteristics
+        if characteristic.uuid == batteryLeftCharUUID {
+            if let level = parseBatteryLevel(data) {
+                print("Left earbud battery: \(level)%")
+                updateBatteryLevels(left: level)
+            }
+        } else if characteristic.uuid == batteryRightCharUUID {
+            if let level = parseBatteryLevel(data) {
+                print("Right earbud battery: \(level)%")
+                updateBatteryLevels(right: level)
+            }
+        } else if characteristic.uuid == batteryCaseCharUUID {
+            if let level = parseBatteryLevel(data) {
+                print("Case battery: \(level)%")
+                updateBatteryLevels(case: level)
+            }
+        } 
+        // Device info characteristics
+        else if characteristic.uuid == firmwareRevisionCharUUID {
+            if let versionString = String(data: data, encoding: .utf8) {
+                firmwareVersion = versionString
+                print("Firmware version updated: \(versionString)")
+            }
+        } else if characteristic.uuid == modelNumberCharUUID {
+            if let modelString = String(data: data, encoding: .utf8) {
+                modelNumber = modelString
+                print("Model number updated: \(modelString)")
+            }
+        } 
+        // Standard battery level characteristic
+        else if characteristic.uuid.uuidString.lowercased() == "2a19" {
+            if let level = parseBatteryLevel(data) {
+                print("Standard battery level: \(level)%")
+                // Try to determine which battery this is (might be any of them)
+                // For now, just update left earbud as a default
+                updateBatteryLevels(left: level)
+            }
+        }
+        // Look for any battery-related characteristics by name
+        else if characteristic.uuid.uuidString.lowercased().contains("battery") || 
+                characteristic.uuid.uuidString.lowercased().contains("batt") ||
+                characteristic.uuid.uuidString.lowercased().contains("level") {
+            if let level = parseBatteryLevel(data) {
+                print("Generic battery level found: \(level)% from \(characteristic.uuid)")
+                // Update the first empty battery value we find
+                if batteryLevels.left == 0 {
+                    updateBatteryLevels(left: level)
+                } else if batteryLevels.right == 0 {
+                    updateBatteryLevels(right: level)
+                } else if batteryLevels.case == 0 {
+                    updateBatteryLevels(case: level)
+                }
+            }
         }
     }
     
-    private func handleBatteryLevelUpdate(_ data: Data) {
-        guard !data.isEmpty else { return }
+    private func parseBatteryLevel(_ data: Data) -> Int? {
+        guard !data.isEmpty else { return nil }
         
-        // Most basic implementation - just reads the first byte as a percentage
-        let batteryLevel = Int(data[0])
-        print("Battery level updated: \(batteryLevel)%")
+        // Try different battery level formats
         
-        // In a real implementation, we'd determine which earbud or case this is for
-        // For now we're just using the same value for all components
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.batteryLevels = (batteryLevel, batteryLevel, batteryLevel)
+        // Format 1: Single byte percentage (0-100)
+        if data.count == 1 {
+            return Int(data[0])
         }
-    }
-    
-    private func handleModelNumberUpdate(_ data: Data) {
-        guard let modelString = String(data: data, encoding: .utf8) else { return }
-        modelNumber = modelString
-        print("Model number updated: \(modelString)")
-    }
-    
-    private func handleFirmwareRevisionUpdate(_ data: Data) {
-        guard let versionString = String(data: data, encoding: .utf8) else { return }
-        firmwareVersion = versionString
-        print("Firmware version updated: \(versionString)")
+        
+        // Format 2: Two bytes (common for some devices)
+        if data.count == 2 {
+            let value = UInt16(data[0]) | (UInt16(data[1]) << 8)
+            return Int(min(value, 100))
+        }
+        
+        // Format 3: First byte is the percentage in a multi-byte array
+        return Int(data[0])
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -673,50 +807,7 @@ extension Data {
 }
 
 // MARK: - Earbud Types
-enum ANCMode: String, CaseIterable, Identifiable {
-    case off = "Off"
-    case light = "Light"
-    case medium = "Medium"
-    case high = "High"
-    case adaptive = "Adaptive"
-    case transparency = "Transparency"
-    
-    var id: String { self.rawValue }
-}
 
-enum EqualizerPreset: String, CaseIterable, Identifiable {
-    case balanced = "Balanced"
-    case moreVoice = "More Voice"
-    case moreBass = "More Bass"
-    case moreTreble = "More Treble"
-    case custom = "Custom"
-    
-    var id: String { self.rawValue }
-}
 
-enum EarbudSide {
-    case left
-    case right
-}
 
-enum GestureType: String, CaseIterable, Identifiable {
-    case singleTap = "Single Tap"
-    case doubleTap = "Double Tap"
-    case tripleTap = "Triple Tap"
-    case holdTap = "Hold"
-    
-    var id: String { self.rawValue }
-}
 
-enum GestureAction: String, CaseIterable, Identifiable {
-    case none = "None"
-    case playPause = "Play/Pause"
-    case nextTrack = "Next Track"
-    case previousTrack = "Previous Track"
-    case volumeUp = "Volume Up"
-    case volumeDown = "Volume Down"
-    case toggleANC = "Toggle ANC"
-    case voiceAssistant = "Voice Assistant"
-    
-    var id: String { self.rawValue }
-} 

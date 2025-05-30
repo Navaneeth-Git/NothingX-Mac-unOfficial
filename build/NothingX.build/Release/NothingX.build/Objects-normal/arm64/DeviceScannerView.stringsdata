@@ -1,0 +1,64 @@
+{
+  "source": "/Users/navaneeth/Documents/NothingX/NothingX/Views/DeviceScannerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Connect to Device",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 12
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bluetooth is %@. Scanning may not work.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "Please enable Bluetooth to scan for devices",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Scanning for devices...",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "Refresh",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 85
+        }
+      },
+      {
+        "comment": "",
+        "key": "Signal: %lld dBm",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 150
+        }
+      }
+    ]
+  },
+  "version": 1
+}
