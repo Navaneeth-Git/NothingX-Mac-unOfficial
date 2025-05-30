@@ -32,16 +32,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1F4C50E22DEA5E50006E50EF /* NothingX */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = NothingX;
 			sourceTree = "<group>";
 		};
 		1F4C50F12DEA5E52006E50EF /* NothingXTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = NothingXTests;
 			sourceTree = "<group>";
 		};
 		1F4C50FB2DEA5E52006E50EF /* NothingXUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = NothingXUITests;
 			sourceTree = "<group>";
 		};
@@ -111,8 +117,6 @@
 				1F4C50E22DEA5E50006E50EF /* NothingX */,
 			);
 			name = NothingX;
-			packageProductDependencies = (
-			);
 			productName = NothingX;
 			productReference = 1F4C50E02DEA5E50006E50EF /* NothingX.app */;
 			productType = "com.apple.product-type.application";
@@ -134,8 +138,6 @@
 				1F4C50F12DEA5E52006E50EF /* NothingXTests */,
 			);
 			name = NothingXTests;
-			packageProductDependencies = (
-			);
 			productName = NothingXTests;
 			productReference = 1F4C50EE2DEA5E52006E50EF /* NothingXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,8 +159,6 @@
 				1F4C50FB2DEA5E52006E50EF /* NothingXUITests */,
 			);
 			name = NothingXUITests;
-			packageProductDependencies = (
-			);
 			productName = NothingXUITests;
 			productReference = 1F4C50F82DEA5E52006E50EF /* NothingXUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -402,6 +402,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +430,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

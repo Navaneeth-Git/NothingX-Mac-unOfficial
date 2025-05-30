@@ -1,0 +1,5 @@
+// Custom build settings
+INFOPLIST_FILE = NothingX/Info.plist
+INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NothingX needs Bluetooth access to connect to and control your Nothing earbuds."
+INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "NothingX needs Bluetooth access to connect to and control your Nothing earbuds."
+INFOPLIST_KEY_NSBluetoothUsageDescription = "NothingX needs Bluetooth access to connect to and control your Nothing earbuds."

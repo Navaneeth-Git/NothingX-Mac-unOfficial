@@ -1,0 +1,2 @@
+// Force Info.plist path to root
+INFOPLIST_FILE = Info.plist
